@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stage 1: Lille History - Tour de France 2025</title>
+    <title id="page-title">Tour de France 2025 - Stage Explorer</title>
     <style>
         * {
             margin: 0;
@@ -65,219 +65,6 @@
             opacity: 0.9;
             position: relative;
             z-index: 1;
-        }
-        
-        .stage-card {
-            padding: 30px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border-bottom: 3px solid #ffd700;
-            position: relative;
-        }
-        
-        .stage-card:hover {
-            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        .stage-info {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-        
-        .stage-name {
-            font-size: 1.5em;
-            font-weight: bold;
-            color: #1e3c72;
-        }
-        
-        .stage-details {
-            color: #666;
-            font-size: 0.9em;
-            display: flex;
-            gap: 10px;
-            align-items: center;
-            margin-top: 5px;
-        }
-        
-        .stage-badge {
-            background: #28a745;
-            color: white;
-            padding: 3px 8px;
-            border-radius: 12px;
-            font-size: 0.75em;
-            font-weight: bold;
-        }
-        
-        .click-hint {
-            color: #2a5298;
-            font-style: italic;
-            font-size: 0.9em;
-            transition: all 0.3s ease;
-        }
-        
-        .stage-card:hover .click-hint {
-            transform: translateX(5px);
-        }
-        
-        .history-content {
-            display: none;
-            margin-top: 20px;
-            padding: 20px;
-            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-            border-radius: 10px;
-            border-left: 4px solid #ffd700;
-        }
-        
-        .history-content.show {
-            display: block;
-            animation: slideDown 0.5s ease;
-        }
-        
-        @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-                max-height: 0;
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-                max-height: 2000px;
-            }
-        }
-        
-        .history-section {
-            margin-bottom: 25px;
-        }
-        
-        .history-section h3 {
-            color: #1e3c72;
-            margin-bottom: 15px;
-            font-size: 1.3em;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .history-section p {
-            line-height: 1.7;
-            margin-bottom: 12px;
-            color: #444;
-        }
-        
-        .highlight {
-            background: linear-gradient(120deg, #ffd700 0%, #ffed4a 100%);
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-weight: bold;
-            color: #333;
-        }
-        
-        .fact-box {
-            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
-            padding: 18px;
-            border-radius: 10px;
-            margin: 20px 0;
-            border-left: 4px solid #2196f3;
-            position: relative;
-            overflow: hidden;
-        }
-        
-
-        
-        .navigation {
-            padding: 20px;
-            text-align: center;
-            background: #f8f9fa;
-        }
-        
-        .nav-button {
-            background: linear-gradient(135deg, #2a5298, #1e3c72);
-            color: white;
-            padding: 12px 24px;
-            border: none;
-            border-radius: 25px;
-            cursor: pointer;
-            margin: 0 10px;
-            transition: all 0.3s ease;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        
-        .nav-button:hover:not(:disabled) {
-            background: linear-gradient(135deg, #1e3c72, #2a5298);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-        
-        .nav-button:disabled {
-            background: #ccc;
-            cursor: not-allowed;
-            transform: none;
-            box-shadow: none;
-        }
-        
-        .stage-profile {
-            margin: 20px 0;
-            padding: 20px;
-            background: white;
-            border-radius: 12px;
-            border: 1px solid #e0e0e0;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-        }
-        
-        .profile-title {
-            font-weight: bold;
-            margin-bottom: 15px;
-            color: #1e3c72;
-            font-size: 1.2em;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .profile-title::before {
-            content: '📈';
-        }
-        
-        .profile-container {
-            width: 100%;
-            height: 180px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            overflow: hidden;
-            background: #f8f9fa;
-        }
-        
-        .profile-svg {
-            width: 100%;
-            height: 100%;
-        }
-        
-        .profile-legend {
-            margin-top: 15px;
-            display: flex;
-            gap: 25px;
-            font-size: 0.9em;
-            flex-wrap: wrap;
-        }
-        
-        .legend-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .legend-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            display: inline-block;
         }
         
         .stage-overview {
@@ -426,6 +213,54 @@
             font-weight: bold;
         }
         
+        .stage-card {
+            padding: 30px;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid #ffd700;
+            position: relative;
+        }
+        
+        .stage-card:hover {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .stage-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .stage-name {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #1e3c72;
+        }
+        
+        .stage-details {
+            color: #666;
+            font-size: 0.9em;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            margin-top: 5px;
+        }
+        
+        .stage-badge {
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 0.75em;
+            font-weight: bold;
+            color: white;
+        }
+        
+        .stage-badge.flat { background: #28a745; }
+        .stage-badge.hilly { background: #ffc107; color: #333; }
+        .stage-badge.mountain { background: #dc3545; }
+        .stage-badge.time-trial { background: #6f42c1; }
+        
         .stats-bar {
             display: flex;
             justify-content: space-around;
@@ -451,6 +286,143 @@
             font-size: 0.9em;
             color: #666;
             margin-top: 5px;
+        }
+        
+        .stage-profile {
+            margin: 20px 0;
+            padding: 20px;
+            background: white;
+            border-radius: 12px;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        
+        .profile-title {
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #1e3c72;
+            font-size: 1.2em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .profile-title::before {
+            content: '📈';
+        }
+        
+        .profile-container {
+            width: 100%;
+            height: 180px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #f8f9fa;
+        }
+        
+        .profile-svg {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .profile-legend {
+            margin-top: 15px;
+            display: flex;
+            gap: 25px;
+            font-size: 0.9em;
+            flex-wrap: wrap;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .legend-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        
+        .history-content {
+            margin-top: 20px;
+            padding: 20px;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 10px;
+            border-left: 4px solid #ffd700;
+        }
+        
+        .history-section {
+            margin-bottom: 25px;
+        }
+        
+        .history-section h3 {
+            color: #1e3c72;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .history-section p {
+            line-height: 1.7;
+            margin-bottom: 12px;
+            color: #444;
+        }
+        
+        .highlight {
+            background: linear-gradient(120deg, #ffd700 0%, #ffed4a 100%);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .fact-box {
+            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+            padding: 18px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 4px solid #2196f3;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .navigation {
+            padding: 20px;
+            text-align: center;
+            background: #f8f9fa;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .nav-button {
+            background: linear-gradient(135deg, #2a5298, #1e3c72);
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .nav-button:hover:not(:disabled) {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .nav-button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
         }
         
         @media (max-width: 768px) {
@@ -491,22 +463,11 @@
                 flex-wrap: wrap;
                 gap: 15px;
             }
-        }
-        
-        .weather-info {
-            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
-            padding: 15px;
-            border-radius: 10px;
-            margin: 15px 0;
-            border-left: 4px solid #2196f3;
-        }
-        
-        .weather-info h4 {
-            color: #1e3c72;
-            margin-bottom: 8px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
+            
+            .navigation {
+                flex-direction: column;
+                gap: 10px;
+            }
         }
     </style>
 </head>
@@ -526,407 +487,438 @@
                 <div class="legend-item"><span class="legend-square time-trial"></span> Time Trial</div>
                 <div class="legend-item"><span class="legend-square rest-day"></span> Rest Day</div>
             </div>
-            <div class="calendar-container">
-                <!-- Week headers -->
-                <div class="weekday-header">Mon</div>
-                <div class="weekday-header">Tue</div>
-                <div class="weekday-header">Wed</div>
-                <div class="weekday-header">Thu</div>
-                <div class="weekday-header">Fri</div>
-                <div class="weekday-header">Sat</div>
-                <div class="weekday-header">Sun</div>
-                
-                <!-- July 2025 calendar -->
-                <!-- Week 1: June 30 - July 6 -->
-                <div class="calendar-day empty"></div>
-                <div class="calendar-day empty"></div>
-                <div class="calendar-day empty"></div>
-                <div class="calendar-day empty"></div>
-                <div class="calendar-day empty"></div>
-                <div class="stage-square flat stage-active" onclick="showStage(1)" title="Stage 1: Lille → Lille (Flat, 185km)">
-                    <div class="square-number">1</div>
-                    <div class="square-date">Jul 5</div>
-                </div>
-                <div class="stage-square hilly" onclick="showStage(2)" title="Stage 2: Lauwin-Planque → Boulogne-sur-Mer (Hilly, 209km)">
-                    <div class="square-number">2</div>
-                    <div class="square-date">Jul 6</div>
-                </div>
-                
-                <!-- Week 2: July 7-13 -->
-                <div class="stage-square flat" onclick="showStage(3)" title="Stage 3: Valenciennes → Dunkerque (Flat, 178km)">
-                    <div class="square-number">3</div>
-                    <div class="square-date">Jul 7</div>
-                </div>
-                <div class="stage-square hilly" onclick="showStage(4)" title="Stage 4: Amiens → Rouen (Hilly, 174km)">
-                    <div class="square-number">4</div>
-                    <div class="square-date">Jul 8</div>
-                </div>
-                <div class="stage-square time-trial" onclick="showStage(5)" title="Stage 5: Caen → Caen (Time Trial, 33km)">
-                    <div class="square-number">5</div>
-                    <div class="square-date">Jul 9</div>
-                </div>
-                <div class="stage-square hilly" onclick="showStage(6)" title="Stage 6: Bayeux → Vire Normandie (Hilly, 202km)">
-                    <div class="square-number">6</div>
-                    <div class="square-date">Jul 10</div>
-                </div>
-                <div class="stage-square hilly" onclick="showStage(7)" title="Stage 7: Saint-Malo → Mûr-de-Bretagne (Hilly, 199km)">
-                    <div class="square-number">7</div>
-                    <div class="square-date">Jul 11</div>
-                </div>
-                <div class="stage-square flat" onclick="showStage(8)" title="Stage 8: Saint-Méen-le-Grand → Laval (Flat, 173km)">
-                    <div class="square-number">8</div>
-                    <div class="square-date">Jul 12</div>
-                </div>
-                <div class="stage-square flat" onclick="showStage(9)" title="Stage 9: Chinon → Châteauroux (Flat, 176km)">
-                    <div class="square-number">9</div>
-                    <div class="square-date">Jul 13</div>
-                </div>
-                
-                <!-- Week 3: July 14-20 -->
-                <div class="stage-square mountain" onclick="showStage(10)" title="Stage 10: Ennezat → Le Mont-Dore Puy de Sancy (Mountain, 168km)">
-                    <div class="square-number">10</div>
-                    <div class="square-date">Jul 14</div>
-                </div>
-                <div class="rest-day" title="Rest Day">
-                    <div class="rest-text">Rest</div>
-                    <div class="square-date">Jul 15</div>
-                </div>
-                <div class="stage-square flat" onclick="showStage(11)" title="Stage 11: Toulouse → Toulouse (Flat, 156km)">
-                    <div class="square-number">11</div>
-                    <div class="square-date">Jul 16</div>
-                </div>
-                <div class="stage-square mountain" onclick="showStage(12)" title="Stage 12: Auch → Hautacam (Mountain, 179km)">
-                    <div class="square-number">12</div>
-                    <div class="square-date">Jul 17</div>
-                </div>
-                <div class="stage-square time-trial mountain" onclick="showStage(13)" title="Stage 13: Loudenvielle → Peyragudes (Mountain Time Trial, 11km)">
-                    <div class="square-number">13</div>
-                    <div class="square-date">Jul 18</div>
-                </div>
-                <div class="stage-square mountain" onclick="showStage(14)" title="Stage 14: Pau → Luchon-Superbagnères (Mountain, 183km)">
-                    <div class="square-number">14</div>
-                    <div class="square-date">Jul 19</div>
-                </div>
-                <div class="stage-square hilly" onclick="showStage(15)" title="Stage 15: Muret → Carcassonne (Hilly, 178km)">
-                    <div class="square-number">15</div>
-                    <div class="square-date">Jul 20</div>
-                </div>
-                
-                <!-- Week 4: July 21-27 -->
-                <div class="rest-day" title="Rest Day">
-                    <div class="rest-text">Rest</div>
-                    <div class="square-date">Jul 21</div>
-                </div>
-                <div class="stage-square mountain" onclick="showStage(16)" title="Stage 16: Montpellier → Mont Ventoux (Mountain, 149km)">
-                    <div class="square-number">16</div>
-                    <div class="square-date">Jul 22</div>
-                </div>
-                <div class="stage-square hilly" onclick="showStage(17)" title="Stage 17: Bollène → Valence (Hilly, 161km)">
-                    <div class="square-number">17</div>
-                    <div class="square-date">Jul 23</div>
-                </div>
-                <div class="stage-square mountain" onclick="showStage(18)" title="Stage 18: Vif → Courchevel Col de la Loze (Mountain, 170km)">
-                    <div class="square-number">18</div>
-                    <div class="square-date">Jul 24</div>
-                </div>
-                <div class="stage-square mountain" onclick="showStage(19)" title="Stage 19: Albertville → La Plagne (Mountain, 133km)">
-                    <div class="square-number">19</div>
-                    <div class="square-date">Jul 25</div>
-                </div>
-                <div class="stage-square hilly" onclick="showStage(20)" title="Stage 20: Nantua → Pontarlier (Hilly, 172km)">
-                    <div class="square-number">20</div>
-                    <div class="square-date">Jul 26</div>
-                </div>
-                <div class="stage-square flat" onclick="showStage(21)" title="Stage 21: Mantes-la-Ville → Paris Champs-Élysées (Flat, 115km)">
-                    <div class="square-number">21</div>
-                    <div class="square-date">Jul 27</div>
-                </div>
+            <div class="calendar-container" id="calendar-container">
+                <!-- Calendar will be populated by JavaScript -->
             </div>
         </div>
         
-        <div class="stage-card" onclick="toggleHistory('stage1')">
-            <div class="stage-info">
-                <div>
-                    <div class="stage-name">Stage 1: Lille → Lille</div>
-                    <div class="stage-details">
-                        <span>Saturday, July 5 • 185km</span>
-                        <span class="stage-badge">Flat Stage</span>
-                    </div>
-                </div>
-                <div class="click-hint">Click to explore history →</div>
-            </div>
-            
-            <div class="stats-bar">
-                <div class="stat-item">
-                    <span class="stat-number">185</span>
-                    <div class="stat-label">Kilometers</div>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">1,065</span>
-                    <div class="stat-label">Elevation Gain (m)</div>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">3</span>
-                    <div class="stat-label">Cat 4 Climbs</div>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">4.5</span>
-                    <div class="stat-label">Estimated Hours</div>
-                </div>
-            </div>
-            
-            <div class="stage-profile">
-                <div class="profile-title">Stage Profile</div>
-                <div class="profile-container">
-                    <svg class="profile-svg" viewBox="0 0 800 180" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Background -->
-                        <rect width="800" height="180" fill="#f8f9fa"/>
-                        
-                        <!-- Grid lines -->
-                        <defs>
-                            <pattern id="grid" width="40" height="18" patternUnits="userSpaceOnUse">
-                                <path d="M 40 0 L 0 0 0 18" fill="none" stroke="#e0e0e0" stroke-width="0.5"/>
-                            </pattern>
-                        </defs>
-                        <rect width="800" height="180" fill="url(#grid)"/>
-                        
-                        <!-- Enhanced elevation profile -->
-                        <path d="M 0 145 
-                                 L 100 138 
-                                 L 180 130 
-                                 L 220 85 
-                                 L 240 130 
-                                 L 350 135 
-                                 L 450 125 
-                                 L 500 75 
-                                 L 520 125 
-                                 L 600 130 
-                                 L 680 90 
-                                 L 700 130 
-                                 L 800 145" 
-                              fill="none" 
-                              stroke="#2a5298" 
-                              stroke-width="4"/>
-                        
-                        <!-- Gradient fill under the line -->
-                        <defs>
-                            <linearGradient id="profileGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                                <stop offset="0%" style="stop-color:#2a5298;stop-opacity:0.3" />
-                                <stop offset="100%" style="stop-color:#2a5298;stop-opacity:0.05" />
-                            </linearGradient>
-                        </defs>
-                        <path d="M 0 145 
-                                 L 100 138 
-                                 L 180 130 
-                                 L 220 85 
-                                 L 240 130 
-                                 L 350 135 
-                                 L 450 125 
-                                 L 500 75 
-                                 L 520 125 
-                                 L 600 130 
-                                 L 680 90 
-                                 L 700 130 
-                                 L 800 145
-                                 L 800 180
-                                 L 0 180 Z" 
-                              fill="url(#profileGradient)"/>
-                        
-                        <!-- Key climb points -->
-                        <circle cx="220" cy="85" r="5" fill="#ff6b35" stroke="white" stroke-width="2"/>
-                        <circle cx="500" cy="75" r="5" fill="#ff6b35" stroke="white" stroke-width="2"/>
-                        <circle cx="680" cy="90" r="5" fill="#ff6b35" stroke="white" stroke-width="2"/>
-                        
-                        <!-- Labels for key climbs -->
-                        <text x="220" y="75" text-anchor="middle" font-size="10" fill="#333" font-weight="bold">Notre-Dame-de-Lorette</text>
-                        <text x="220" y="65" text-anchor="middle" font-size="9" fill="#666">1km @ 7.3%</text>
-                        <text x="500" y="65" text-anchor="middle" font-size="10" fill="#333" font-weight="bold">Mont Cassel</text>
-                        <text x="500" y="55" text-anchor="middle" font-size="9" fill="#666">1.8km @ 3.8%</text>
-                        <text x="680" y="80" text-anchor="middle" font-size="10" fill="#333" font-weight="bold">Mont Noir</text>
-                        <text x="680" y="70" text-anchor="middle" font-size="9" fill="#666">1.3km @ 6.1%</text>
-                        
-                        <!-- Distance markers -->
-                        <text x="0" y="170" font-size="11" fill="#666" font-weight="bold">0km</text>
-                        <text x="200" y="170" font-size="11" fill="#666" font-weight="bold">50km</text>
-                        <text x="400" y="170" font-size="11" fill="#666" font-weight="bold">100km</text>
-                        <text x="600" y="170" font-size="11" fill="#666" font-weight="bold">150km</text>
-                        <text x="800" y="170" font-size="11" fill="#666" font-weight="bold" text-anchor="end">185km</text>
-                        
-                        <!-- Start/Finish markers -->
-                        <rect x="0" y="135" width="3" height="35" fill="#ffd700"/>
-                        <rect x="797" y="135" width="3" height="35" fill="#ffd700"/>
-                        <text x="15" y="155" font-size="10" fill="#333" font-weight="bold">START</text>
-                        <text x="750" y="155" font-size="10" fill="#333" font-weight="bold">FINISH</text>
-                    </svg>
-                </div>
-                <div class="profile-legend">
-                    <span class="legend-item"><span class="legend-dot" style="background: #ff6b35;"></span> Cat 4 Climbs</span>
-                    <span class="legend-item"><span class="legend-dot" style="background: #ffd700;"></span> Start/Finish</span>
-                    <span class="legend-item" style="font-size: 0.85em; color: #666;">Max elevation: 159m</span>
-                </div>
-            </div>
-            
-            <div class="weather-info">
-                <h4>🌤️ Expected Race Conditions</h4>
-                <p><strong>Temperature:</strong> 18-22°C • <strong>Winds:</strong> SW 15-25 km/h • <strong>Chance of rain:</strong> 20%</p>
-                <p><em>Classic northern French weather - watch for crosswinds in exposed sections!</em></p>
-            </div>
-            
-            <div id="stage1" class="history-content">
-                <div class="history-section">
-                    <h3>🏛️ Lille's Tour de France Legacy</h3>
-                    <p>Lille has a <span class="highlight">rich cycling heritage</span> spanning over a century of Tour de France history! The northern French city has been a <strong>33-time host</strong> for Tour stages, making it one of the most visited cities in Tour history.</p>
-                    
-                    <div class="fact-box">
-                        <strong>🎯 Historic Milestone:</strong> This marks Lille's <strong>third Grand Départ</strong> hosting honor - joining the exclusive club of cities to host multiple Tour starts!
-                    </div>
-                    
-                    <p>From early century racing to modern Grand Départs, Lille has witnessed the evolution of professional cycling. The city's strategic location near the Belgian border has made it a natural gateway for the Tour's northern European adventures.</p>
-                </div>
-                
-                <div class="history-section">
-                    <h3>🏆 Grand Départ Chronicles</h3>
-                    <p><strong>1960 - The Pioneer:</strong> Lille's first Grand Départ launched what would become a tradition of northern French Tour starts. The stage was won by Jean Grączyk in what was considered a relatively modest beginning to the Tour's relationship with the city.</p>
-                    
-                    <p><strong>1994 - The Historic Triumph:</strong> A truly dramatic and historic Grand Départ! Chris Boardman became the first Englishman to wear the yellow jersey in 32 years, winning the 7.2km prologue time trial and beating the legendary Miguel Induráin by 15 seconds. Boardman's aerodynamic position and cutting-edge equipment revolutionized time trial racing.</p>
-                    
-                    <div class="fact-box">
-                        <strong>🚨 Tour Legend Alert!</strong> The very next day in 1994, cycling history was made in the worst way. During the sprint finish, a policeman leaned into the road to photograph the final sprint, causing Belgian sprinter Wilfried Nelissen to slam into him at full speed. The horrific crash also took down Laurent Jalabert, who was hospitalized with severe facial injuries. Despite the chaos, Djamolidine Abdoujaparov won the stage, but the image of the policeman's photography mishap became one of Tour's most infamous moments!
-                    </div>
-                    
-                    <p><strong>2025 - The Homecoming:</strong> After three consecutive foreign Grand Départs (Denmark 2022, Spain 2023, Italy 2024), the Tour returns to French soil for this celebratory third Lille Grand Départ. The route has been designed to showcase both the region's cycling heritage and its historical significance.</p>
-                </div>
-                
-                <div class="history-section">
-                    <h3>🎨 The Cultural Melting Pot</h3>
-                    <p>Lille proudly bears the title <span class="highlight">"Capital of Flanders"</span> - a vibrant fusion of French elegance and Flemish character. This unique cultural blend creates an atmosphere unlike anywhere else in France.</p>
-                    
-                    <p>The city has produced remarkable figures throughout history, including <strong>Charles de Gaulle</strong> (born in nearby suburbs) and the brilliant scientist <strong>Louis Pasteur</strong>, who spent significant time at the University of Lille developing his groundbreaking theories.</p>
-                    
-                    <div class="fact-box">
-                        <strong>🌟 Modern Marvel:</strong> Lille is home to one of France's largest universities (60,000+ students!) and has hosted major international events from Euro 2016 football matches to serving as a venue city for the 2024 Paris Olympics basketball preliminaries!
-                    </div>
-                </div>
-                
-                <div class="history-section">
-                    <h3>🚵‍♂️ What Makes This Stage Special</h3>
-                    <p>The 2025 route is a masterclass in Tour design, taking riders through the <strong>historic Flemish hills</strong> including Mont Cassel and Mont Noir. While tiny by Alpine standards, these climbs are steeped in World War I history and offer tactical racing opportunities.</p>
-                    
-                    <p>The route passes near <strong>Notre-Dame-de-Lorette</strong>, France's largest military cemetery, creating a deeply moving combination of sporting excellence and historical remembrance. The sight of the peloton racing past these hallowed grounds adds profound meaning to the competition.</p>
-                    
-                    <p>Tactically, expect <span class="highlight">crosswinds and nervous racing</span> - this is classic northern French terrain where weather conditions and smart positioning can split the peloton into decisive groups. The relatively flat profile masks the technical challenges that await.</p>
-                    
-                    <div class="fact-box">
-                        <strong>🏁 Recent Connection:</strong> The last time Lille hosted a Tour stage start was 2022, when Australian Simon Clarke won the iconic cobbled stage from Lille to Arenberg Porte du Hainaut - a beautiful homage to the nearby Paris-Roubaix "Hell of the North" route that defines northern French cycling culture.
-                    </div>
-                </div>
-                
-
-            </div>
+        <div id="stage-content">
+            <!-- Stage content will be populated by JavaScript -->
         </div>
         
         <div class="navigation">
-            <button class="nav-button" disabled>← Previous Stage</button>
-            <button class="nav-button" onclick="showComingSoon('Stage 2')">Next Stage →</button>
+            <button class="nav-button" id="prev-button" onclick="navigateStage(-1)">← Previous Stage</button>
+            <button class="nav-button" id="next-button" onclick="navigateStage(1)">Next Stage →</button>
         </div>
     </div>
 
     <script>
-        function showStage(stageNumber) {
-            if (stageNumber === 1) {
-                // Already showing stage 1 - scroll to top
-                document.querySelector('.stage-card').scrollIntoView({ behavior: 'smooth' });
+        // Stage data - this would typically be loaded from separate JSON files
+        const stageData = {
+            1: {
+                title: "Stage 1: Lille → Lille",
+                route: "Lille → Lille",
+                date: "Saturday, July 5",
+                distance: 185,
+                type: "flat",
+                elevationGain: 1065,
+                climbs: 3,
+                estimatedTime: 4.5,
+                description: "Flat Stage",
+                profilePath: "M 0 145 L 100 138 L 180 130 L 220 85 L 240 130 L 350 135 L 450 125 L 500 75 L 520 125 L 600 130 L 680 90 L 700 130 L 800 145",
+                climbPoints: [
+                    {x: 220, y: 85, name: "Notre-Dame-de-Lorette", gradient: "1km @ 7.3%"},
+                    {x: 500, y: 75, name: "Mont Cassel", gradient: "1.8km @ 3.8%"},
+                    {x: 680, y: 90, name: "Mont Noir", gradient: "1.3km @ 6.1%"}
+                ],
+                maxElevation: "159m",
+                history: {
+                    legacy: {
+                        title: "🏛️ Lille's Tour de France Legacy",
+                        content: `Lille has a <span class="highlight">rich cycling heritage</span> spanning over a century of Tour de France history! The northern French city has been a <strong>33-time host</strong> for Tour stages, making it one of the most visited cities in Tour history.
+                        
+                        <div class="fact-box">
+                            <strong>🎯 Historic Milestone:</strong> This marks Lille's <strong>third Grand Départ</strong> hosting honor - joining the exclusive club of cities to host multiple Tour starts!
+                        </div>
+                        
+                        From early century racing to modern Grand Départs, Lille has witnessed the evolution of professional cycling. The city's strategic location near the Belgian border has made it a natural gateway for the Tour's northern European adventures.`
+                    },
+                    grandDepart: {
+                        title: "🏆 Grand Départ Chronicles", 
+                        content: `<strong>1960 - The Pioneer:</strong> Lille's first Grand Départ launched what would become a tradition of northern French Tour starts. The stage was won by Jean Grączyk in what was considered a relatively modest beginning to the Tour's relationship with the city.
+                        
+                        <strong>1994 - The Historic Triumph:</strong> A truly dramatic and historic Grand Départ! Chris Boardman became the first Englishman to wear the yellow jersey in 32 years, winning the 7.2km prologue time trial and beating the legendary Miguel Induráin by 15 seconds. Boardman's aerodynamic position and cutting-edge equipment revolutionized time trial racing.
+                        
+                        <div class="fact-box">
+                            <strong>🚨 Tour Legend Alert!</strong> The very next day in 1994, cycling history was made in the worst way. During the sprint finish, a policeman leaned into the road to photograph the final sprint, causing Belgian sprinter Wilfried Nelissen to slam into him at full speed. The horrific crash also took down Laurent Jalabert, who was hospitalized with severe facial injuries. Despite the chaos, Djamolidine Abdoujaparov won the stage, but the image of the policeman's photography mishap became one of Tour's most infamous moments!
+                        </div>
+                        
+                        <strong>2025 - The Homecoming:</strong> After three consecutive foreign Grand Départs (Denmark 2022, Spain 2023, Italy 2024), the Tour returns to French soil for this celebratory third Lille Grand Départ. The route has been designed to showcase both the region's cycling heritage and its historical significance.`
+                    },
+                    culture: {
+                        title: "🎨 The Cultural Melting Pot",
+                        content: `Lille proudly bears the title <span class="highlight">"Capital of Flanders"</span> - a vibrant fusion of French elegance and Flemish character. This unique cultural blend creates an atmosphere unlike anywhere else in France.
+                        
+                        The city has produced remarkable figures throughout history, including <strong>Charles de Gaulle</strong> (born in nearby suburbs) and the brilliant scientist <strong>Louis Pasteur</strong>, who spent significant time at the University of Lille developing his groundbreaking theories.
+                        
+                        <div class="fact-box">
+                            <strong>🌟 Modern Marvel:</strong> Lille is home to one of France's largest universities (60,000+ students!) and has hosted major international events from Euro 2016 football matches to serving as a venue city for the 2024 Paris Olympics basketball preliminaries!
+                        </div>`
+                    },
+                    special: {
+                        title: "🚵‍♂️ What Makes This Stage Special",
+                        content: `The 2025 route is a masterclass in Tour design, taking riders through the <strong>historic Flemish hills</strong> including Mont Cassel and Mont Noir. While tiny by Alpine standards, these climbs are steeped in World War I history and offer tactical racing opportunities.
+                        
+                        The route passes near <strong>Notre-Dame-de-Lorette</strong>, France's largest military cemetery, creating a deeply moving combination of sporting excellence and historical remembrance. The sight of the peloton racing past these hallowed grounds adds profound meaning to the competition.
+                        
+                        Tactically, expect <span class="highlight">crosswinds and nervous racing</span> - this is classic northern French terrain where weather conditions and smart positioning can split the peloton into decisive groups. The relatively flat profile masks the technical challenges that await.
+                        
+                        <div class="fact-box">
+                            <strong>🏁 Recent Connection:</strong> The last time Lille hosted a Tour stage start was 2022, when Australian Simon Clarke won the iconic cobbled stage from Lille to Arenberg Porte du Hainaut - a beautiful homage to the nearby Paris-Roubaix "Hell of the North" route that defines northern French cycling culture.
+                        </div>`
+                    }
+                }
+            },
+            
+            2: {
+                title: "Stage 2: Lauwin-Planque → Boulogne-sur-Mer",
+                route: "Lauwin-Planque → Boulogne-sur-Mer", 
+                date: "Sunday, July 6",
+                distance: 209,
+                type: "hilly",
+                elevationGain: 1880,
+                climbs: 5,
+                estimatedTime: 5.2,
+                description: "Hilly Stage",
+                profilePath: "M 0 135 L 100 130 L 200 125 L 300 120 L 400 115 L 500 110 L 600 85 L 650 115 L 700 75 L 750 110 L 800 120",
+                climbPoints: [
+                    {x: 600, y: 85, name: "Saint-Étienne-au-Mont", gradient: "900m @ 11%"},
+                    {x: 700, y: 75, name: "Côte d'Outreau", gradient: "800m @ 8.8%"}
+                ],
+                maxElevation: "198m",
+                history: {
+                    legacy: {
+                        title: "🏛️ Boulogne-sur-Mer's Maritime Heritage",
+                        content: `Boulogne-sur-Mer stands as <span class="highlight">France's largest fishing port</span> and a gateway to England across the Channel. This coastal city has witnessed over 2,000 years of history, from Roman occupation to medieval fortifications to modern maritime commerce.
+                        
+                        <div class="fact-box">
+                            <strong>🌊 Did You Know?</strong> Boulogne-sur-Mer is closer to London than to Paris! The city has been a crucial link between Continental Europe and Britain for centuries.
+                        </div>
+                        
+                        The city's strategic position has made it a natural stage host for the Tour, particularly when routes explore the northern coastal regions. The challenging hills leading into the city provide perfect terrain for selective racing.`
+                    },
+                    tourHistory: {
+                        title: "🚴‍♂️ Tour de France Connections",
+                        content: `This marks Boulogne-sur-Mer's <strong>5th time</strong> hosting the Tour de France, continuing a distinguished tradition that spans 76 years. The city has exclusively served as a finish destination, each time providing dramatic backdrops of coastal beauty and challenging terrain.
+                        
+                        <strong>Previous Tour visits:</strong> 1949 (Norbert Callens victory), 1994 (Jean-Paul van Poppel sprint win), 2001 (Erik Zabel's 9th career stage win), and 2012 (Peter Sagan's memorable uphill sprint victory with his famous celebration).
+                        
+                        The route into Boulogne traditionally features the intimidating climbs of <strong>Saint-Étienne-au-Mont</strong> and <strong>Côte d'Outreau</strong> in the final kilometers - gradients that can shatter pelotons and create spectacular racing.
+                        
+                        <div class="fact-box">
+                            <strong>⚡ Tactical Alert:</strong> At 209km, this is the <strong>longest stage</strong> of the 2025 Tour! Combined with coastal crosswinds and late climbs, this stage could be a major selection point early in the race.
+                        </div>`
+                    },
+                    cultural: {
+                        title: "🎨 Where History Meets the Sea",
+                        content: `Boulogne-sur-Mer's <span class="highlight">Haute Ville</span> (Upper Town) is a perfectly preserved medieval city surrounded by 13th-century ramparts. The city boasts the largest aquarium in Europe, Nausicaá, and has been shaped by centuries of maritime tradition.
+                        
+                        Famous figures connected to Boulogne include <strong>Napoleon Bonaparte</strong>, who assembled his Grande Armée here for the planned invasion of England. The Column of the Grande Armée still stands as a monument to this historic gathering.
+                        
+                        The city's fishing heritage runs deep - it's said that Boulogne's fishermen have been feeding Paris for over 800 years, with daily trains carrying fresh catch to the capital's markets.`
+                    },
+                    racing: {
+                        title: "⚡ The Challenge Ahead",
+                        content: `This stage promises to be a <span class="highlight">decisive early test</span> in the 2025 Tour. The combination of distance (209km), coastal winds, and punishing late climbs could split the general classification contenders before they've even reached the mountains.
+                        
+                        The final 10 kilometers feature two brutal climbs: Saint-Étienne-au-Mont hits gradients of up to 15%, while Côte d'Outreau averages nearly 9% just 5km from the finish. These aren't just climbs - they're potential race-winners.
+                        
+                        <div class="fact-box">
+                            <strong>🌪️ Weather Factor:</strong> Channel crosswinds are notorious in this region. Smart teams will position themselves well before the coastal section, as echelons could form and split the peloton into decisive groups.
+                        </div>`
+                    }
+                }
+            },
+            
+            3: {
+                title: "Stage 3: Valenciennes → Dunkerque",
+                route: "Valenciennes → Dunkerque",
+                date: "Monday, July 7", 
+                distance: 178,
+                type: "flat",
+                elevationGain: 800,
+                climbs: 1,
+                estimatedTime: 4.0,
+                description: "Flat Stage",
+                profilePath: "M 0 140 L 150 135 L 300 130 L 450 125 L 500 95 L 550 125 L 700 130 L 800 140",
+                climbPoints: [
+                    {x: 500, y: 95, name: "Mont Cassel", gradient: "2.3km @ 3.8%"}
+                ],
+                maxElevation: "176m",
+                history: {
+                    legacy: {
+                        title: "🏭 Valenciennes: Industrial Heritage Meets Cycling",
+                        content: `Valenciennes carries the proud industrial heritage of northern France, built on centuries of <span class="highlight">coal mining, steel production, and textile manufacturing</span>. This resilient city has reinvented itself from heavy industry to modern automotive production, with Toyota manufacturing the Yaris just outside the city.
+                        
+                        <div class="fact-box">
+                            <strong>🚗 Modern Marvel:</strong> Valenciennes hasn't lost its manufacturing spirit - it's now home to major automotive production, proving that industrial cities can evolve while maintaining their working-class character.
+                        </div>
+                        
+                        The city suffered greatly during both World Wars, with the German Hindenburg Line running directly through it in WWI, and occupation fires destroying much of the center in WWII. Yet Valenciennes rebuilt stronger, maintaining its beautiful Town Hall façade that survived both conflicts.`
+                    },
+                    dunkerque: {
+                        title: "🌊 Dunkerque: From Wartime Heroism to Cycling Glory",
+                        content: `Dunkerque holds a special place in history as the site of <span class="highlight">Operation Dynamo</span> - the miraculous 1940 evacuation that saved over 338,000 Allied troops from Nazi capture. This "Miracle of Dunkerque" turned military disaster into a symbol of resilience and determination.
+                        
+                        For cycling fans, Dunkerque has an even richer Tour de France legacy with <strong>7 stage hostings across 5 different years</strong> dating back to 1913. The city played a particularly significant role during the Tour's early era (1913-1923), traditionally hosting the penultimate stage before the final journey to Paris.
+                        
+                        <strong>Notable Tour moments:</strong> Philippe Thys crashed and was knocked unconscious during the 1913 stage finish but still won his first Tour. The city returned as Grand Départ host in 2001 with Christophe Moreau winning the prologue.
+                        
+                        <div class="fact-box">
+                            <strong>🏁 Recent Memory:</strong> The Tour last visited Dunkerque in 2022 for Stage 4, where the phenomenal Wout van Aert launched a late attack to win in nearby Calais - showcasing exactly the kind of tactical racing this region inspires.
+                        </div>`
+                    },
+                    route: {
+                        title: "🗺️ Through the Mining Basin",
+                        content: `This 178km journey takes riders through the historic <span class="highlight">mining basin</span> of northern France, past slag heaps (terrils) that stand as monuments to the region's industrial past. The route passes through towns like Saint-Amand-les-Eaux, with its ancient abbey bell tower, and the cycling-famous Orchies.
+                        
+                        The single categorized climb, <strong>Mont Cassel</strong>, offers spectacular 360-degree views and sits at the heart of Flemish culture in France. At just 2.3km at 3.8%, it's not difficult by Tour standards, but positioned 30km from the finish, it could be the launch pad for a late break.
+                        
+                        <strong>Valenciennes Last Tour Visit:</strong> The city hasn't hosted a Tour stage start for 34 years, making 2025 a truly nostalgic homecoming for this proud cycling region.`
+                    },
+                    tactical: {
+                        title: "💨 The Crosswind Factor",
+                        content: `Don't let the "flat stage" designation fool you - this could be one of the most <span class="highlight">tactically explosive stages</span> of the early Tour. The final 35km run completely flat along the Channel coast, where summer crosswinds can split pelotons into small, decisive groups.
+                        
+                        Smart teams will position themselves perfectly before hitting the exposed coastal roads. In conditions like these, gaps of several minutes can open in just kilometers, potentially eliminating general classification contenders before they reach a single mountain.
+                        
+                        <div class="fact-box">
+                            <strong>🌪️ The Belgian Factor:</strong> With the Belgian border just 20km away, expect massive crowds and extra motivation from Flemish riders familiar with these exact conditions from races like the Tour of Flanders and Gent-Wevelgem.
+                        </div>
+                        
+                        The stage perfectly embodies northern French cycling: seemingly simple on paper, potentially explosive in reality. Bunch sprint or dramatic selection? Only the wind will decide.`
+                    }
+                }
+            }
+        };
+
+        // Calendar data
+        const calendarData = [
+            // Week headers
+            {type: 'header', text: 'Mon'}, {type: 'header', text: 'Tue'}, {type: 'header', text: 'Wed'}, 
+            {type: 'header', text: 'Thu'}, {type: 'header', text: 'Fri'}, {type: 'header', text: 'Sat'}, {type: 'header', text: 'Sun'},
+            
+            // Week 1: June 30 - July 6
+            {type: 'empty'}, {type: 'empty'}, {type: 'empty'}, {type: 'empty'}, {type: 'empty'},
+            {type: 'stage', stage: 1, date: 'Jul 5', stageType: 'flat', title: 'Stage 1: Lille → Lille (Flat, 185km)'},
+            {type: 'stage', stage: 2, date: 'Jul 6', stageType: 'hilly', title: 'Stage 2: Lauwin-Planque → Boulogne-sur-Mer (Hilly, 209km)'},
+            
+            // Week 2: July 7-13  
+            {type: 'stage', stage: 3, date: 'Jul 7', stageType: 'flat', title: 'Stage 3: Valenciennes → Dunkerque (Flat, 178km)'},
+            {type: 'stage', stage: 4, date: 'Jul 8', stageType: 'hilly', title: 'Stage 4: Amiens → Rouen (Hilly, 174km)'},
+            {type: 'stage', stage: 5, date: 'Jul 9', stageType: 'time-trial', title: 'Stage 5: Caen → Caen (Time Trial, 33km)'},
+            {type: 'stage', stage: 6, date: 'Jul 10', stageType: 'hilly', title: 'Stage 6: Bayeux → Vire Normandie (Hilly, 202km)'},
+            {type: 'stage', stage: 7, date: 'Jul 11', stageType: 'hilly', title: 'Stage 7: Saint-Malo → Mûr-de-Bretagne (Hilly, 199km)'},
+            {type: 'stage', stage: 8, date: 'Jul 12', stageType: 'flat', title: 'Stage 8: Saint-Méen-le-Grand → Laval (Flat, 173km)'},
+            {type: 'stage', stage: 9, date: 'Jul 13', stageType: 'flat', title: 'Stage 9: Chinon → Châteauroux (Flat, 176km)'},
+            
+            // Week 3: July 14-20
+            {type: 'stage', stage: 10, date: 'Jul 14', stageType: 'mountain', title: 'Stage 10: Ennezat → Le Mont-Dore Puy de Sancy (Mountain, 168km)'},
+            {type: 'rest', date: 'Jul 15', title: 'Rest Day'},
+            {type: 'stage', stage: 11, date: 'Jul 16', stageType: 'flat', title: 'Stage 11: Toulouse → Toulouse (Flat, 156km)'},
+            {type: 'stage', stage: 12, date: 'Jul 17', stageType: 'mountain', title: 'Stage 12: Auch → Hautacam (Mountain, 179km)'},
+            {type: 'stage', stage: 13, date: 'Jul 18', stageType: 'time-trial mountain', title: 'Stage 13: Loudenvielle → Peyragudes (Mountain Time Trial, 11km)'},
+            {type: 'stage', stage: 14, date: 'Jul 19', stageType: 'mountain', title: 'Stage 14: Pau → Luchon-Superbagnères (Mountain, 183km)'},
+            {type: 'stage', stage: 15, date: 'Jul 20', stageType: 'hilly', title: 'Stage 15: Muret → Carcassonne (Hilly, 178km)'},
+            
+            // Week 4: July 21-27
+            {type: 'rest', date: 'Jul 21', title: 'Rest Day'},
+            {type: 'stage', stage: 16, date: 'Jul 22', stageType: 'mountain', title: 'Stage 16: Montpellier → Mont Ventoux (Mountain, 149km)'},
+            {type: 'stage', stage: 17, date: 'Jul 23', stageType: 'hilly', title: 'Stage 17: Bollène → Valence (Hilly, 161km)'},
+            {type: 'stage', stage: 18, date: 'Jul 24', stageType: 'mountain', title: 'Stage 18: Vif → Courchevel Col de la Loze (Mountain, 170km)'},
+            {type: 'stage', stage: 19, date: 'Jul 25', stageType: 'mountain', title: 'Stage 19: Albertville → La Plagne (Mountain, 133km)'},
+            {type: 'stage', stage: 20, date: 'Jul 26', stageType: 'hilly', title: 'Stage 20: Nantua → Pontarlier (Hilly, 172km)'},
+            {type: 'stage', stage: 21, date: 'Jul 27', stageType: 'flat', title: 'Stage 21: Mantes-la-Ville → Paris Champs-Élysées (Flat, 115km)'}
+        ];
+        
+        let currentStage = 1;
+        
+        function initializeApp() {
+            buildCalendar();
+            loadStage(1);
+        }
+        
+        function buildCalendar() {
+            const container = document.getElementById('calendar-container');
+            container.innerHTML = '';
+            
+            calendarData.forEach((item, index) => {
+                if (item.type === 'header') {
+                    const header = document.createElement('div');
+                    header.className = 'weekday-header';
+                    header.textContent = item.text;
+                    container.appendChild(header);
+                } else if (item.type === 'empty') {
+                    const empty = document.createElement('div');
+                    empty.className = 'calendar-day empty';
+                    container.appendChild(empty);
+                } else if (item.type === 'stage') {
+                    const stage = document.createElement('div');
+                    stage.className = `stage-square ${item.stageType}`;
+                    if (item.stage === currentStage) stage.classList.add('stage-active');
+                    stage.title = item.title;
+                    stage.onclick = () => loadStage(item.stage);
+                    stage.innerHTML = `
+                        <div class="square-number">${item.stage}</div>
+                        <div class="square-date">${item.date}</div>
+                    `;
+                    container.appendChild(stage);
+                } else if (item.type === 'rest') {
+                    const rest = document.createElement('div');
+                    rest.className = 'rest-day';
+                    rest.title = item.title;
+                    rest.innerHTML = `
+                        <div class="rest-text">Rest</div>
+                        <div class="square-date">${item.date}</div>
+                    `;
+                    container.appendChild(rest);
+                }
+            });
+        }
+        
+        function loadStage(stageNumber) {
+            if (!stageData[stageNumber]) {
+                alert(`Stage ${stageNumber} data not yet available. Only stages 1-3 are built for this prototype.`);
                 return;
             }
             
-            showComingSoon(`Stage ${stageNumber}`);
+            currentStage = stageNumber;
+            const stage = stageData[stageNumber];
+            
+            // Update page title
+            document.getElementById('page-title').textContent = `${stage.title} - Tour de France 2025`;
+            
+            // Update calendar highlighting
+            buildCalendar();
+            
+            // Build stage content
+            const content = document.getElementById('stage-content');
+            content.innerHTML = `
+                <div class="stage-card">
+                    <div class="stage-info">
+                        <div>
+                            <div class="stage-name">${stage.title}</div>
+                            <div class="stage-details">
+                                <span>${stage.date} • ${stage.distance}km</span>
+                                <span class="stage-badge ${stage.type}">${stage.description}</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="stats-bar">
+                        <div class="stat-item">
+                            <span class="stat-number">${stage.distance}</span>
+                            <div class="stat-label">Kilometers</div>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">${stage.elevationGain.toLocaleString()}</span>
+                            <div class="stat-label">Elevation Gain (m)</div>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">${stage.climbs}</span>
+                            <div class="stat-label">Categorized Climbs</div>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">${stage.estimatedTime}</span>
+                            <div class="stat-label">Estimated Hours</div>
+                        </div>
+                    </div>
+                    
+                    <div class="stage-profile">
+                        <div class="profile-title">Stage Profile</div>
+                        <div class="profile-container">
+                            ${generateStageProfile(stage)}
+                        </div>
+                        <div class="profile-legend">
+                            <span class="legend-item"><span class="legend-dot" style="background: #ff6b35;"></span> Categorized Climbs</span>
+                            <span class="legend-item"><span class="legend-dot" style="background: #ffd700;"></span> Start/Finish</span>
+                            <span class="legend-item" style="font-size: 0.85em; color: #666;">Max elevation: ${stage.maxElevation}</span>
+                        </div>
+                    </div>
+                    
+                    <div class="history-content">
+                        ${generateHistoryContent(stage.history)}
+                    </div>
+                </div>
+            `;
+            
+            // Update navigation buttons
+            updateNavigation();
+            
+            // Scroll to the top of the stage content
+            document.querySelector('.stage-card').scrollIntoView({ 
+                behavior: 'smooth', 
+                block: 'start' 
+            });
         }
         
-        function showComingSoon(stageName) {
-            // Create a more engaging coming soon message
-            const messages = [
-                `🚴‍♂️ ${stageName} is being crafted with the same attention to detail!`,
-                `📍 ${stageName} route analysis and historical deep-dive coming soon!`,
-                `🏆 ${stageName} will feature the same rich storytelling and interactive elements!`,
-                `⭐ ${stageName} is in development - stay tuned for more Tour magic!`
-            ];
-            const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+        function generateStageProfile(stage) {
+            const climbLabels = stage.climbPoints.map(climb => `
+                <circle cx="${climb.x}" cy="${climb.y}" r="5" fill="#ff6b35" stroke="white" stroke-width="2"/>
+                <text x="${climb.x}" y="${climb.y - 10}" text-anchor="middle" font-size="10" fill="#333" font-weight="bold">${climb.name}</text>
+                <text x="${climb.x}" y="${climb.y - 20}" text-anchor="middle" font-size="9" fill="#666">${climb.gradient}</text>
+            `).join('');
             
-            // You could replace this with a nice modal or slide-in notification
-            alert(randomMessage + '\n\nClick on any stage square to jump directly to it once all stages are built!');
+            return `
+                <svg class="profile-svg" viewBox="0 0 800 180" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="800" height="180" fill="#f8f9fa"/>
+                    
+                    <defs>
+                        <pattern id="grid" width="40" height="18" patternUnits="userSpaceOnUse">
+                            <path d="M 40 0 L 0 0 0 18" fill="none" stroke="#e0e0e0" stroke-width="0.5"/>
+                        </pattern>
+                        <linearGradient id="profileGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" style="stop-color:#2a5298;stop-opacity:0.3" />
+                            <stop offset="100%" style="stop-color:#2a5298;stop-opacity:0.05" />
+                        </linearGradient>
+                    </defs>
+                    <rect width="800" height="180" fill="url(#grid)"/>
+                    
+                    <path d="${stage.profilePath}" fill="none" stroke="#2a5298" stroke-width="4"/>
+                    <path d="${stage.profilePath} L 800 180 L 0 180 Z" fill="url(#profileGradient)"/>
+                    
+                    ${climbLabels}
+                    
+                    <text x="0" y="170" font-size="11" fill="#666" font-weight="bold">0km</text>
+                    <text x="200" y="170" font-size="11" fill="#666" font-weight="bold">${Math.round(stage.distance * 0.25)}km</text>
+                    <text x="400" y="170" font-size="11" fill="#666" font-weight="bold">${Math.round(stage.distance * 0.5)}km</text>
+                    <text x="600" y="170" font-size="11" fill="#666" font-weight="bold">${Math.round(stage.distance * 0.75)}km</text>
+                    <text x="800" y="170" font-size="11" fill="#666" font-weight="bold" text-anchor="end">${stage.distance}km</text>
+                    
+                    <rect x="0" y="135" width="3" height="35" fill="#ffd700"/>
+                    <rect x="797" y="135" width="3" height="35" fill="#ffd700"/>
+                    <text x="15" y="155" font-size="10" fill="#333" font-weight="bold">START</text>
+                    <text x="750" y="155" font-size="10" fill="#333" font-weight="bold">FINISH</text>
+                </svg>
+            `;
         }
         
-        function toggleHistory(stageId) {
-            const content = document.getElementById(stageId);
-            const card = content.parentElement;
-            const hint = card.querySelector('.click-hint');
+        function generateHistoryContent(history) {
+            return Object.entries(history).map(([key, section]) => `
+                <div class="history-section">
+                    <h3>${section.title}</h3>
+                    ${section.content.split('\n').map(p => p.trim() ? `<p>${p}</p>` : '').join('')}
+                </div>
+            `).join('');
+        }
+        
+        function updateNavigation() {
+            const prevButton = document.getElementById('prev-button');
+            const nextButton = document.getElementById('next-button');
             
-            if (content.classList.contains('show')) {
-                // Hide content
-                content.classList.remove('show');
-                hint.textContent = 'Click to explore history →';
-                hint.style.transform = 'translateX(0)';
-            } else {
-                // Show content
-                content.classList.add('show');
-                hint.textContent = '← Click to hide';
-                hint.style.transform = 'translateX(-5px)';
-                
-                // Smooth scroll to content after animation
-                setTimeout(() => {
-                    content.scrollIntoView({ 
-                        behavior: 'smooth', 
-                        block: 'nearest' 
-                    });
-                }, 300);
+            prevButton.disabled = currentStage <= 1;
+            nextButton.disabled = currentStage >= 3; // Only stages 1-3 available in prototype
+        }
+        
+        function navigateStage(direction) {
+            const newStage = currentStage + direction;
+            if (newStage >= 1 && newStage <= 3) { // Only stages 1-3 available
+                loadStage(newStage);
             }
         }
         
-        // Enhanced hover effects
-        document.querySelectorAll('.stage-card').forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.style.borderLeftColor = '#2a5298';
-                this.style.borderLeftWidth = '6px';
-            });
-            
-            card.addEventListener('mouseleave', function() {
-                this.style.borderLeftColor = '#ffd700';
-                this.style.borderLeftWidth = '3px';
-            });
-        });
-        
-        // Add click animation to calendar squares
-        document.querySelectorAll('.stage-square').forEach(square => {
-            square.addEventListener('click', function() {
-                this.style.transform = 'scale(0.95)';
-                setTimeout(() => {
-                    this.style.transform = '';
-                }, 150);
-            });
-        });
-        
-        // Intersection Observer for animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-        
-        // Observe elements for scroll animations
-        document.querySelectorAll('.history-section').forEach(section => {
-            section.style.opacity = '0';
-            section.style.transform = 'translateY(20px)';
-            section.style.transition = 'all 0.6s ease';
-            observer.observe(section);
-        });
+        // Initialize the app
+        initializeApp();
     </script>
 </body>
 </html>
