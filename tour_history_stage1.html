@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stage 1: Lille History - Tour de France 2025</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #ffd700, #ffed4a);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(45deg, #1e3c72, #2a5298);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .stage-title {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        .stage-subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .stage-card {
+            padding: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid #ffd700;
+            position: relative;
+        }
+        
+        .stage-card:hover {
+            background: #f8f9fa;
+            transform: translateY(-2px);
+        }
+        
+        .stage-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .stage-name {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #1e3c72;
+        }
+        
+        .stage-details {
+            color: #666;
+            font-size: 0.9em;
+        }
+        
+        .click-hint {
+            color: #2a5298;
+            font-style: italic;
+            font-size: 0.9em;
+        }
+        
+        .history-content {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid #ffd700;
+        }
+        
+        .history-content.show {
+            display: block;
+            animation: slideDown 0.3s ease;
+        }
+        
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                max-height: 0;
+            }
+            to {
+                opacity: 1;
+                max-height: 500px;
+            }
+        }
+        
+        .history-section {
+            margin-bottom: 20px;
+        }
+        
+        .history-section h3 {
+            color: #1e3c72;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+        
+        .history-section p {
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+        
+        .highlight {
+            background: #ffd700;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+        
+        .fact-box {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid #2196f3;
+        }
+        
+        .navigation {
+            padding: 20px;
+            text-align: center;
+            background: #f8f9fa;
+        }
+        
+        .nav-button {
+            background: #2a5298;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 0 10px;
+            transition: background 0.3s ease;
+        }
+        
+        .nav-button:hover {
+            background: #1e3c72;
+        }
+        
+        .nav-button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="stage-title">🚴‍♂️ Tour de France 2025</h1>
+            <p class="stage-subtitle">Interactive Stage History Explorer</p>
+        </div>
+        
+        <div class="stage-card" onclick="toggleHistory('stage1')">
+            <div class="stage-info">
+                <div>
+                    <div class="stage-name">Stage 1: Lille → Lille</div>
+                    <div class="stage-details">Saturday, July 5 • 185km • Flat Stage</div>
+                </div>
+                <div class="click-hint">Click to explore history →</div>
+            </div>
+            
+            <div id="stage1" class="history-content">
+                <div class="history-section">
+                    <h3>🏛️ Lille's Tour de France Legacy</h3>
+                    <p>Lille has a <span class="highlight">rich cycling heritage</span> spanning over a century of Tour de France history!</p>
+                    
+                    <div class="fact-box">
+                        <strong>🎯 Fun Fact:</strong> This is Lille's <strong>third time</strong> hosting the Grand Départ! Previous years: 1960 and 1994.
+                    </div>
+                    
+                    <p>The northern French city has been a <strong>33-time host</strong> for Tour stages, making it one of the most visited cities in Tour history. From early century racing to modern Grand Départs, Lille has seen it all.</p>
+                </div>
+                
+                <div class="history-section">
+                    <h3>🏆 Grand Départ History</h3>
+                    <p><strong>1960:</strong> Lille's first Grand Départ launched what would become a tradition of northern French Tour starts.</p>
+                    <p><strong>1994:</strong> The second Grand Départ, 31 years ago, brought international attention back to this cycling-mad region.</p>
+                    <p><strong>2025:</strong> The homecoming! After three consecutive foreign Grand Départs (Denmark 2022, Spain 2023, Italy 2024), the Tour returns to French soil.</p>
+                </div>
+                
+                <div class="history-section">
+                    <h3>🎨 The Cultural Scene</h3>
+                    <p>Lille is known as the <span class="highlight">"Capital of Flanders"</span> - a vibrant mix of French and Flemish cultures. The city has produced famous figures like <strong>Charles de Gaulle</strong> and scientist <strong>Louis Pasteur</strong>.</p>
+                    
+                    <div class="fact-box">
+                        <strong>🌟 Did You Know?</strong> Lille is home to one of France's largest universities and has hosted major events from Euro 2016 football to the 2024 Paris Olympics!
+                    </div>
+                </div>
+                
+                <div class="history-section">
+                    <h3>🚵‍♀️ What Makes This Stage Special</h3>
+                    <p>The 2025 route takes riders through the <strong>historic Flemish hills</strong> including Mont Cassel and Mont Noir - tiny climbs by Tour standards but steeped in WWI history.</p>
+                    <p>The route passes near <strong>Notre-Dame-de-Lorette</strong>, France's largest military cemetery, creating a poignant mix of sport and remembrance.</p>
+                    <p>Expect <span class="highlight">crosswinds and nervous racing</span> - this is classic northern French terrain where the weather and positioning can split the peloton!</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="navigation">
+            <button class="nav-button" disabled>← Previous Stage</button>
+            <button class="nav-button" onclick="alert('Stage 2 coming soon!')">Next Stage →</button>
+        </div>
+    </div>
+
+    <script>
+        function toggleHistory(stageId) {
+            const content = document.getElementById(stageId);
+            content.classList.toggle('show');
+            
+            // Update click hint text
+            const card = content.parentElement;
+            const hint = card.querySelector('.click-hint');
+            if (content.classList.contains('show')) {
+                hint.textContent = '← Click to hide';
+            } else {
+                hint.textContent = 'Click to explore history →';
+            }
+        }
+        
+        // Add some nice hover effects
+        document.querySelectorAll('.stage-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.borderLeftColor = '#2a5298';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.borderLeftColor = '#ffd700';
+            });
+        });
+    </script>
+</body>
+</html>
