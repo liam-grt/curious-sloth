@@ -426,14 +426,48 @@
         }
         
         @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            .container {
+                border-radius: 10px;
+            }
+            
+            .header {
+                padding: 20px;
+            }
+            
+            .stage-title {
+                font-size: 2em;
+            }
+            
+            .stage-subtitle {
+                font-size: 1em;
+            }
+            
+            .stage-overview {
+                padding: 20px;
+            }
+            
+            .overview-title {
+                font-size: 1.6em;
+                margin-bottom: 20px;
+            }
+            
             .calendar-container {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 6px;
                 max-width: 100%;
-                gap: 8px;
             }
             
             .weekday-header {
-                padding: 10px;
-                font-size: 0.85em;
+                display: none;
+            }
+            
+            .stage-square, .rest-day {
+                min-height: 70px;
+                padding: 5px;
             }
             
             .square-number {
@@ -444,13 +478,22 @@
                 font-size: 0.7em;
             }
             
+            .rest-text {
+                font-size: 0.75em;
+            }
+            
             .calendar-legend {
-                gap: 15px;
+                gap: 10px;
+                margin-bottom: 20px;
             }
             
             .calendar-legend .legend-item {
-                font-size: 0.85em;
+                font-size: 0.8em;
                 padding: 6px 10px;
+            }
+            
+            .stage-card {
+                padding: 20px;
             }
             
             .stage-info {
@@ -459,14 +502,93 @@
                 gap: 10px;
             }
             
+            .stage-name {
+                font-size: 1.3em;
+            }
+            
             .stats-bar {
                 flex-wrap: wrap;
                 gap: 15px;
+                padding: 15px;
+            }
+            
+            .stat-item {
+                min-width: calc(50% - 7.5px);
+            }
+            
+            .stat-number {
+                font-size: 1.5em;
+            }
+            
+            .profile-container {
+                height: 150px;
+            }
+            
+            .profile-legend {
+                gap: 15px;
+                font-size: 0.8em;
+            }
+            
+            .history-section h3 {
+                font-size: 1.2em;
             }
             
             .navigation {
                 flex-direction: column;
                 gap: 10px;
+                padding: 15px;
+            }
+            
+            .nav-button {
+                width: 100%;
+                padding: 15px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .calendar-container {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 4px;
+            }
+            
+            .stage-square, .rest-day {
+                min-height: 60px;
+                padding: 3px;
+            }
+            
+            .square-number {
+                font-size: 1em;
+            }
+            
+            .square-date {
+                font-size: 0.65em;
+            }
+            
+            .calendar-legend {
+                flex-direction: column;
+                align-items: center;
+                gap: 8px;
+            }
+            
+            .stats-bar {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .stat-item {
+                min-width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                text-align: left;
+            }
+            
+            .stat-number {
+                font-size: 1.3em;
+            }
+            
+            .stage-title {
+                font-size: 1.8em;
             }
         }
     </style>
